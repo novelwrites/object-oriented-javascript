@@ -6,12 +6,12 @@
 //method is called pieces().  This 2nd method should print out the various 
 //parts that are essential to building a class.  Instantiate the class, and 
 //invoke the method so the results are showing in the console once this file is run.
-
+//NOTE: Create index.html, right click on ti to open live server, then click inspect on live server and console to view code execution results
 //your code here...
 class WhyClass {
   constructor () {
   
-  this.purpose="blahblahblah";
+  this.purpose="A class in Object Oriented Programming is a blueprint for creating data-structures called objects, providing initial values for state, and implementations of behavior by member functions or methods. The user-defined objects are created using the class keyword.";
 
  }
 
@@ -20,12 +20,12 @@ class WhyClass {
 }
 
 pieces(){
-    console.log("essential parts for building a class are...");
+    console.log("Essential parts for building a class include constructors, objects (properties and functions) and this keyword and new keyword.");
 }
 
 }
 
-const instantofclass = new WhyClass();
+const instantofclass = new WhyClass();    
 instantofclass.explain()
 instantofclass.pieces()
 
@@ -102,15 +102,41 @@ class Shape {
     }
 
     calcArea(){
-        if (this.sides.length===3){ //looking at length of array in this.sides
+        if (this.sides.length===3){ //looking at length of array in this.sides for triangle
             console.log(`${this.name}'s area is calculated to be : ${.5 * this.base * this.height}`);    
         }
         
     }
     
     calcPerimeter(){
-        if (this.sides.length===3){ //looking at length of array in this.sides
+        if (this.sides.length===3){ //looking at length of array in this.sides for triangle
             console.log(`${this.name}'s perimeter is calculated to be : ${(this.base) + (this.sides[1] + this.sides[2]) }`)
+        }
+    }
+
+    calcArea(){
+        if (this.sides===4){ //looking at # of sides in this.sides for rectangle
+            console.log(`${this.name}'s area is calculated to be : ${this.length * this.width}`);    
+        }
+        
+    }
+    
+    calcPerimeter(){
+        if (this.sides===4){ //looking at # of sides in this.sides for rectangle
+            console.log(`${this.name}'s perimeter is calculated to be : ${(2 * this.length) + (2 * this.width) }`)
+        }
+    }
+
+    calcArea(){
+        if (this.radius===1){ //looking at value of radius for circle
+            console.log(`${this.name}'s area is calculated to be : ${(Math.PI * this.radius**2).toFixed(2)}`);    
+        }
+        
+    }
+    
+    calcCircumference(){
+        if (this.radius===1){ //looking at value of radius for circle
+            console.log(`${this.name}'s circumference is calculated to be : ${(2 * Math.PI * this.radius).toFixed(2)}`)
         }
     }
 }
@@ -133,12 +159,17 @@ const triangle = {
 
 triangle.base = triangle.sides[0];  //base is the 1st side in the triangle.sides array.
 triangle.height = 6.71; //determine the height using basic geometry.  How do you calculate 
-//the height of a triangle with 2 equal sides?  If you use the formula to caluclate the height, this is a bonus.  If you hard code the correct value here, that will be sufficient, but no bonus :(
+//the height of a triangle with 2 equal sides?  If you use the formula to caluclate the height, this is a bonus.  
+//If you hard code the correct value here, that will be sufficient, but no bonus :(
 
 console.log(triangle);
 triangle.calcArea();
 triangle.calcPerimeter();
 
+
+const rectangle2 = new Shape("Rectangle", null, 4, 2, 5, null)
+rectangle2.calcArea()
+rectangle2.calcPerimeter()
 const rectangle = {
     name : "rectangle",
     sides : 4,
@@ -156,6 +187,10 @@ console.log(rectangle);
 rectangle.calcArea();
 rectangle.calcPerimeter();
 
+
+const circle2 = new Shape("Circle", null,1, null, null, 5) 
+circle2.calcArea()
+circle2.calcCircumference()
 const circle = {
     name : "circle",
     sides : 1,
@@ -169,8 +204,8 @@ const circle = {
 }
 
 console.log(circle);
-circle.calcCircumference();
 circle.calcArea();
+circle.calcCircumference();
 
 
 /*********************************************** 
