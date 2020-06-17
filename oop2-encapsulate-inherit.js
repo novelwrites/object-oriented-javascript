@@ -146,44 +146,45 @@ class Book {
 
                 class Review {
  
-                    #rating = [1,2,3,4,]; //#private variable
-                    #user = [John, Sabitha, Vimala, Victor, Sarah]; //private variable
+                    #rating = ["1 star","2 star","3 star","4 star","5 star"]; //#private variable
+                    #user = ["John", "Sabitha", "Vimala", "Victor", "Sarah"]; //private variable
                    
                     constructor () {
-                        this.#authors="Nancy Golden, Tex Thompson, Jennifer Crippen, J.K. Rowling";
-                        this.#booktitles="Alien Neighbors, Taking Back Advent: Moving from the Mundane to the Miraculous, One Night in Sixes, Ellie's World, The Philosopher's Secrets";
+                        this.#rating=["1 star","2 star","3 star","4 star","5 star"];
+                        this.#user=["John", "Sabitha", "Vimala", "Victor", "Sarah"];
                     }
                   
                     category () {
-                        console.log(this.#booktitles + " " + "are written by" + " " + this.#authors);
+                        console.log(this.#rating[2] + " " + "was written by" + " " + this.#user[1]);
+                        //it's bringing back index value - not sure how to access array value with this keyword
                     }
-                    getAuthors() { //public method
-                        return this.#authors;
+                    getRating() { //public method
+                        return this.#rating;
                    }
                 
-                   setAuthors (value2) {
-                      this.#authors=value2
+                   setRating (value2) {
+                      this.#rating=value2
                      console.log(value2)
                  }
-                     getBooktitles() { //public method
-                        return this.#booktitles;
+                     getUser() { //public method
+                        return this.#user;
                    }
                      
-                     setBooktitles (value) {
-                         this.#booktitles=value
+                     setUser (value) {
+                         this.#user=value
                         console.log(value)
                     }
                 
                     }
                     
                         
-                    const instantofclass4 = new Publisher();
-                        instantofclass4.setBooktitles("War and Peace, Little Women, You Don't Know JS Yet")
-                        console.log (instantofclass4.getBooktitles());
-                        instantofclass4.setAuthors("Leo Tolstoy, Laura Wilder, Kyle Simpson")
-                        console.log (instantofclass4.getAuthors());
-                        instantofclass4.category();
-                        console.log(instantofclass4.category)
+                    const instantofclass5 = new Review();
+                        instantofclass5.setRating([3])
+                        console.log (instantofclass5.getRating());
+                        instantofclass5.setUser([4])
+                        console.log (instantofclass5.getUser());
+                        instantofclass5.category();
+                        console.log(instantofclass5.category)
                         //console.log(this.#author) errors if console.log because private field           
                
                    
@@ -236,10 +237,58 @@ console.log(instantofclass2.category)
 
 
 
-    //your code here...
+    //your code here...*/
+
+class Umbrella { //Parent Organization
+   
+
+    constructor(organization, location) {
+        this.organization = "Golden Cross Ranch LLC";
+        this.location = "Dallas, TX";
+
+    }
+    parentinfo () {
+        console.log(this.organization +  this.location);
+    }
+    
+}
+//console.log(parentinfo) //Not sure whty console.log not working but need to keep going
+
+class Company { //I know this needs to be a child of umbrella - not sure how yet
+
+constructor (name, employees, industry, yearlyrevenue) {
+
+    this.name = name;
+    this.employees = employees;
+    this.industry = industry;
+    this.yearlyrevenue = yearlyrevenue;
 
 
+}
+action1(){
+console.log(this.name + "has" + this.employees + "employees");
+}
 
+action2(){
+console.log(this.name + "is in the" + this.industry + "industry");
+}
+
+}
+
+const UniversalPowerGroup = new Company("Universal Power Group", 75, "battery distributor", "100 million");
+const OptekTechnology = new Company("Optek Technology", 357, "semiconductor", "357 million");
+const Tandy = new Company("Tandy", 1542, "leatherworks", "457 thousand");
+
+    
+console.log (UniversalPowerGroup);
+console.log (OptekTechnology);
+console.log (Tandy);
+
+UniversalPowerGroup.action1()
+Tandy.action2()
+
+//I would have liked to continue but it is getting very late - I gave it a good try and 
+//will return to these concepts when I have more time.
 
 /****************************************************************************************************************************************************************************************   
 Bonus Exercise:
