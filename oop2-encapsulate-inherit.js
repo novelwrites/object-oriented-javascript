@@ -15,8 +15,7 @@
 
 class Book {
  
-    //#title1 = "Alien Neighbors"; //private variable
-    //#title2 = "Taking Back Advent: Moving from the Mundane to the Miraculous"; //#private variable
+    //Note: I used author and genres for my book properties when creating methods
     #author = "Nancy Golden"; //#private variable
     #publisher = "Golden Cross Ranch LLC"; //#private variable
     #genres = "science fiction and devotionals"
@@ -30,16 +29,20 @@ class Book {
      category () {
         console.log(this.#author + " " + "writes" + " " + this.#genres);
     }
-     getAuthor() { //public method
-          return this.#author;
-     }
+    getAuthor() { //public method
+        return this.#author;
+   }
 
+    setAuthor (value2) {
+    this.#author=value2
+    console.log(value2)
+ }
      getGenres() { //public method
         return this.#genres;
    }
      
      setGenres (value) {
-         this.#genres=value
+        this.#genres=value
         console.log(value)
     }
 
@@ -47,13 +50,62 @@ class Book {
     
         
     const instantofclass1 = new Book();
-    instantofclass1.setGenres("historical fiction")
-    console.log (instantofclass1.getGenres());
-    instantofclass1.category();
-    console.log(instantofclass1.category)
-    //console.log(this.#author) errors if console.log because private field
+        instantofclass1.setGenres("historical fiction")
+        console.log (instantofclass1.getGenres());
+        instantofclass1.setAuthor("J.K. Rowling")
+        console.log (instantofclass1.getAuthor());
+        instantofclass1.category();
+        console.log(instantofclass1.category)
+        //console.log(this.#author) errors if console.log because private field
+
+ class Author {
+ 
+    #name = "Nancy Golden"; //#private variable
+    #books = "Alien Neighbors and Taking Back Advent: Moving from the Mundane to the Miraculous"; //private variable
+   
+    constructor () {
+        this.#name="Nancy Golden";
+        this.#books="Alien Neighbors and Taking Back Advent: Moving from the Mundane to the Miraculous";
+    }
+  
+     category () {
+        console.log(this.#books + " " + "is written by" + " " + this.#name);
+    }
+    getName() { //public method
+        return this.#name;
+   }
+
+   setName (value2) {
+      this.#name=value2
+     console.log(value2)
+ }
+     getBooks() { //public method
+        return this.#books;
+   }
+     
+     setBooks (value) {
+         this.#books=value
+        console.log(value)
+    }
+
+    }
+    
+        
+    const instantofclass3 = new Author();
+        instantofclass3.setBooks("One Night in Sixes")
+        console.log (instantofclass3.getBooks());
+        instantofclass3.setName("Tex Thompson")
+        console.log (instantofclass3.getName());
+        instantofclass3.category();
+        console.log(instantofclass3.category)
+        //console.log(this.#author) errors if console.log because private field
+        
+        
 
 
+               
+               
+                   
 
 class Books {  //Not Private (Set up to make sure I understand 
     //how to code it publicly before trying privately).
