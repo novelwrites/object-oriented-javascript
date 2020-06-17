@@ -245,6 +245,7 @@ class Umbrella { //Parent Organization
     constructor(organization, location) {
         this.organization = "Golden Cross Ranch LLC";
         this.location = "Dallas, TX";
+        return;
 
     }
     parentinfo () {
@@ -254,7 +255,7 @@ class Umbrella { //Parent Organization
 }
 //console.log(parentinfo) //Not sure whty console.log not working but need to keep going
 
-class Company { //I know this needs to be a child of umbrella - not sure how yet
+class Company extends Umbrella { //child of umbrella 
 
 constructor (name, employees, industry, yearlyrevenue) {
 
@@ -262,11 +263,10 @@ constructor (name, employees, industry, yearlyrevenue) {
     this.employees = employees;
     this.industry = industry;
     this.yearlyrevenue = yearlyrevenue;
-
-
+           
 }
 action1(){
-console.log(this.name + "has" + this.employees + "employees");
+console.log(this.name + "has" + this.employees + "employees and is a subsidiary of" +this.organization);
 }
 
 action2(){
