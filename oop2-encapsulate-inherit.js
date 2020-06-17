@@ -101,9 +101,90 @@ class Book {
         //console.log(this.#author) errors if console.log because private field
         
         
+        class Publisher {
+ 
+            #authors = "Nancy Golden, Tex Thompson, Jennifer Crippen, J.K. Rowling"; //#private variable
+            #booktitles = "Alien Neighbors, Taking Back Advent: Moving from the Mundane to the Miraculous, One Night in Sixes, Ellie's World, The Philosopher's Secrets"; //private variable
+           
+            constructor () {
+                this.#authors="Nancy Golden, Tex Thompson, Jennifer Crippen, J.K. Rowling";
+                this.#booktitles="Alien Neighbors, Taking Back Advent: Moving from the Mundane to the Miraculous, One Night in Sixes, Ellie's World, The Philosopher's Secrets";
+            }
+          
+            category () {
+                console.log(this.#booktitles + " " + "are written by" + " " + this.#authors);
+            }
+            getAuthors() { //public method
+                return this.#authors;
+           }
+        
+           setAuthors (value2) {
+              this.#authors=value2
+             console.log(value2)
+         }
+             getBooktitles() { //public method
+                return this.#booktitles;
+           }
+             
+             setBooktitles (value) {
+                 this.#booktitles=value
+                console.log(value)
+            }
+        
+            }
+            
+                
+            const instantofclass4 = new Publisher();
+                instantofclass4.setBooktitles("War and Peace, Little Women, You Don't Know JS Yet")
+                console.log (instantofclass4.getBooktitles());
+                instantofclass4.setAuthors("Leo Tolstoy, Laura Wilder, Kyle Simpson")
+                console.log (instantofclass4.getAuthors());
+                instantofclass4.category();
+                console.log(instantofclass4.category)
+                //console.log(this.#author) errors if console.log because private field
+                
 
-
-               
+                class Review {
+ 
+                    #rating = [1,2,3,4,]; //#private variable
+                    #user = [John, Sabitha, Vimala, Victor, Sarah]; //private variable
+                   
+                    constructor () {
+                        this.#authors="Nancy Golden, Tex Thompson, Jennifer Crippen, J.K. Rowling";
+                        this.#booktitles="Alien Neighbors, Taking Back Advent: Moving from the Mundane to the Miraculous, One Night in Sixes, Ellie's World, The Philosopher's Secrets";
+                    }
+                  
+                    category () {
+                        console.log(this.#booktitles + " " + "are written by" + " " + this.#authors);
+                    }
+                    getAuthors() { //public method
+                        return this.#authors;
+                   }
+                
+                   setAuthors (value2) {
+                      this.#authors=value2
+                     console.log(value2)
+                 }
+                     getBooktitles() { //public method
+                        return this.#booktitles;
+                   }
+                     
+                     setBooktitles (value) {
+                         this.#booktitles=value
+                        console.log(value)
+                    }
+                
+                    }
+                    
+                        
+                    const instantofclass4 = new Publisher();
+                        instantofclass4.setBooktitles("War and Peace, Little Women, You Don't Know JS Yet")
+                        console.log (instantofclass4.getBooktitles());
+                        instantofclass4.setAuthors("Leo Tolstoy, Laura Wilder, Kyle Simpson")
+                        console.log (instantofclass4.getAuthors());
+                        instantofclass4.category();
+                        console.log(instantofclass4.category)
+                        //console.log(this.#author) errors if console.log because private field           
                
                    
 
