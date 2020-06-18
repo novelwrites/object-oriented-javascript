@@ -156,21 +156,25 @@ to determine how to set up the methods to fire in the Student sub-class.  :
 */
 
 class Person {
-    name;
+    
+    setName(name){ //argument (name) is given to
+        this.name = name //class variable name
+
+    }
 
     eat() {
         console.log(this.name + " is eating");
     }
 
-    sleep = () => {
+    sleep() {
         console.log(this.name + " is sleeping");
     }
 
-    code = function() {
+    code() {
         console.log(this.name + " is coding");
     }
 
-    repeat = function() {
+    repeat() {
         console.log(this.name + " is repeating the above steps, yet another time");
     }
 
@@ -180,9 +184,12 @@ class Person {
     }
 
 }
-
+//let myPerson = new Teacher();
+//myPerson.setName("Professor Golden"); //method from parent class
 
 class Teacher extends Person {
+
+    
 
     //refactor the methods in this Teacher class, so all of these methods override the methods in the Person super class.  
 
@@ -207,6 +214,15 @@ class Teacher extends Person {
         console.log(this.name + " teaches, codes, eats, sleeps, and repeats");
     }
 }
+
+let myTeacher = new Person();//creating an object named myTeacher for the 
+//Teacher class; myTeacher is referenced to the object so now we can use
+//the object reference of myTeacher to access the methods and properties
+//not just of the same class (Teacher) but also the parent class (Person)
+myTeacher.eat(); //method from parent class Person
+myTeacher.sleep(); //method from parent class
+myTeacher.code(); //method from parent class
+myTeacher.repeat();//method from parent class
 
 
 class Student extends Person {
@@ -241,7 +257,11 @@ student.sleep();
 student.code();
 student.repeat();
 
-
+//I turned into a pumpkin - it's getting late. I worked on inheritance again today so I was running behind
+//but today's exercise 1 was a blast and while I would have liked to do more on exercise 2, I need to 
+//get some rest since we are starting Java tomorrow. I am confident with additional research that I can
+//complete 2. It is my usual problem of implentation and syntax that only redundancy and time on task can 
+//fully resolve.
 
 
 //****************************************************************************************************************************************************************************************   
